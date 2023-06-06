@@ -1,0 +1,137 @@
+  Container(
+                      margin: const EdgeInsets.only(left: 10.0, right: 10.0,top: 10),
+
+                      child: Column(
+
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("near by city",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 15,)),
+                              TextButton(onPressed: (){}, child: Text("more detail>>",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,fontSize: 15,)))
+
+                            ],
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 6.0, right: 6.0,top: 0),
+
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Container(
+
+                                    height: 300,
+
+
+                                    child: ListView.builder(
+                                        itemCount: 4,
+                                        scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context,index){
+                                          return (
+                                              Container(
+                                                margin: const EdgeInsets.only(left: 3.0, right: 3.0,top: 0),
+
+                                                width: MediaQuery.of(context).size.width*0.920,
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  image: DecorationImage(
+                                                    //image: NetworkImage("https://images.unsplash.com/photo-1607162378992-57ff73eeb157?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fGJsdWUlMjBhZXN0aGV0aWN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
+                                                    image: NetworkImage("https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+
+                                                      margin: EdgeInsets.all(1),
+                                                      padding: EdgeInsets.all(50),
+                                                      width: MediaQuery.of(context).size.width*1,
+                                                      height: MediaQuery.of(context).size.height*0.450,
+                                                      child: Column(
+                                                        children: [
+                                                         Row(
+                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                           children: [
+
+                                                      Column(
+                                                      children: [
+                                                      Text(city[index+1],style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w900,)),
+                                                        Text(""),
+
+
+                                                    Row(
+                                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      children: [
+
+                                                        Text(temp[index+1]!=null ? temp[index+1].toString() + "\u00B0" +"f": "Loading",style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600,),),
+                                                        //Icon(Icons.thermostat_outlined,size: 40,),
+                                                      ],
+                                                    ),
+                                                    Text(desc[index+1]!=null ? desc[index+1].toString()  : "Loading",style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600,),),
+                                                    // Text("Cloudy",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey,fontSize: 20,)),
+
+                                                    Container(
+                                                      height:100,
+                                                      width: 155,
+                                                      child: Column(
+                                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                                        children: [
+
+                                                          Row(
+                                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                                            children: [
+                                                              Text("Humidity:      ",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,fontSize: 15.0,)),
+                                                              //Text("53",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey,fontSize: 20,)),
+                                                              Text( humidity[index+1]!=null ? humidity[index+1].toString()  : "Loading"),
+                                                            ],
+                                                          ), Row(
+                                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                                            children: [
+                                                              Text("wind speed:   ",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,fontSize: 15.0,)),
+                                                              // Text("4",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey,fontSize: 20,)),
+                                                              Text( windSpeed[index+1]!=null ? windSpeed[index+1].toString()  : "Loading"),
+                                                            ],
+                                                          ), Row(
+                                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                                            children: [
+                                                              Text("Country:     ",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,fontSize: 15.0,)),
+                                                              Text( country[index+1]!=null ? country[index+1].toString()  : "Loading"),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+
+                                                  ],
+                                                ),
+
+                                                        ],
+                                                      ),
+
+
+                                                    ],
+                                                      //Text(""),alignment: Alignment.bottomCenter,),
+                                          ))
+                                                  ],
+                                                ),
+                                              )
+
+                                          );
+
+                                        }),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+
+
+                      ),
+                    ),
